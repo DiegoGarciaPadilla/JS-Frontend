@@ -1,0 +1,155 @@
+* {
+  font-family: monospace;
+
+  font-size: 15px;
+}
+
+body {
+  top: 0;
+  left: 0;
+  margin: 0;
+
+  background-image: url('../media/background.png');
+  background-size: cover;
+}
+
+header {
+  width: 100%;
+  height: 15vh;
+  padding: 25px 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+header h1 {
+  visibility: hidden;
+}
+
+h1, h2, h3, p {
+  margin: 5px;
+}
+
+/* ------------------------------------ */
+
+.contenido {
+  width: 100%;
+  height: 15vh;
+  padding: 25px 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.pokedex {
+  width: 40%;
+  min-height: 500px;
+
+  display: flex;
+}
+
+.pokedex-left {
+  width: 48%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: red;
+  border: 1px solid black;
+  border-radius: 10px 0 0 10px;
+}
+
+.pokedex-left-img {
+  width: 200px;
+  height: 200px;
+  margin: 25px 0;
+
+  background-color: white;
+  border: 3px solid black;
+}
+
+.pokedex-left-input {
+  width: 80%;
+  height: auto;
+  margin: 25px 0;
+}
+
+.pokedex-left-input input {
+  width: 100%;
+  height: auto;
+
+  font-size: 20px;
+  background-color: #feffb8;
+}
+
+.pokedex-left-bottom {
+  display: flex;
+  margin: 25px 0;
+}
+
+.pokedex-left-bottom-left {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokedex-left-bottom-right {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokedex-left-bottom-righ-button {
+  width: 60px;
+  height: 60px;
+
+  cursor: pointer;
+
+  background-color: #feffb8;
+  border-radius: 50%;
+  box-shadow: 4px -4px 0 #b3b47f;
+}
+
+.pokedex-mid {
+  width: 4%;
+
+  background-color: red;
+  border: 1px solid black;
+}
+
+.pokedex-right {
+  width: 48%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: red;
+  border: 1px solid black;
+  border-radius: 0 10px 10px 0;
+}
+
+.pokedex-right-content {
+  width: 80%;
+  height: 400px;
+  padding: 10px 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow-y:auto;
+
+  background-color: #feffb8;
+  border: 3px solid black;
+  border-radius: 5px;
+}
+
+.pokedex-right-content h2 {
+    font-size: 25px;
+  }
+  

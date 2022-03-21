@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Pokedex</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
+    <link rel="shortcut icon" href="media/favicon.png">
+</head>
+<body>
+    <header>
+        <h1>Pokedex</h1>
+        <img src="media/pokemon.png" alt="Pokemón">
+    </header>
+
+    <section class="contenido">
+        <section class="pokedex">
+            <div class="pokedex-left">
+                <div class="pokedex-left-img">
+                    <img src="media/blanco.png" alt="Pokemón" id="pokeImg" width="100%">
+                </div>
+                <div class="pokedex-left-input">
+                    <input type="text" placeholder="Nombre o ID" id="pokemon" name="pokemon">
+                </div>
+                <div class="pokedex-left-bottom">
+                    <div class="pokedex-left-bottom-left">
+                        <img src="media/direction.png" alt="Botones de dirección" width="80%">
+                    </div>
+                    <div class="pokedex-left-bottom-right">
+                        <div class="pokedex-left-bottom-righ-button" onclick="fetchPokemon()"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pokedex-mid"></div>
+            <div class="pokedex-right">
+                <div class="pokedex-right-content">
+                    <h2 id="pokemonNombre"></h2>
+                    <p id="pokemonID"></p>
+                    <br>
+                    <h3 id="pokemonTypes-Titulo"></h3>
+                    <ul id="pokemonTypes"></ul>
+                    <h3 id="pokemonStats-Titulo"></h3>
+                    <ul id="pokemonStats"></ul>
+                    <h3 id="pokemonMoves-Titulo"></h3>
+                    <ul id="pokemonMoves"></ul>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+<footer>
+    <script src='js/pokedex.js'></script>
+</footer>
+</html>
