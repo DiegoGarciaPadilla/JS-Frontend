@@ -23,38 +23,36 @@ const fetchPokemon = () => {
 
             // Nombre
             let pokeName = data.name;
-            document.getElementById('pokemonNombre').innerHTML = pokeName;
+            pokemonNombre(pokeName);
 
             // ID
             let pokeID = data.id;
-            document.getElementById('pokemonID').innerHTML = `# ${pokeID}`;
+            pokemonID(pokeID);
 
             // Imagen
             let pokeImg = data.sprites.front_default;
-            document.getElementById('pokeImg').src = pokeImg;
+            pokemonImg(pokeImg);
 
             // Tipo
             document.getElementById("pokemonTypes-Titulo").innerHTML = "Tipo";
 
             let types = data.types.map((typ) => typ.type.name)
             document.getElementById("pokemonTypes").innerHTML = "";
-            types.forEach(function (el) {
-                document.getElementById("pokemonTypes").innerHTML += `<li> ${el} </li>`;
-            });
-            
+            pokemonTipos(types)
+
 
             // Estadísticas
             document.getElementById("pokemonStats-Titulo").innerHTML = "Estadísticas";
-
-            let hp = data.stats[0].base_stat;
-            let attack = data.stats[1].base_stat;
-            let defense = data.stats[2].base_stat;
-            let specialattack = data.stats[3].base_stat;
-            let specialdefense = data.stats[4].base_stat;
-            let speed = data.stats[5].base_stat;
+            document.getElementById("pokemonStats").innerHTML = "";
 
             document.getElementById("pokemonStats").innerHTML = "";
             const lista = document.getElementById("pokemonStats");
+
+            let stats = [];
+
+            for (let i = 0; i < 6; i++){
+                stats.push(data.stats[i].base_stat)
+            }
 
             const li_hp = document.createElement("li");
             const li_attack = document.createElement("li");
@@ -63,12 +61,12 @@ const fetchPokemon = () => {
             const li_specialdefense = document.createElement("li");
             const li_speed = document.createElement("li");
 
-            li_hp.innerHTML = `<b>HP:</b> ${hp}`;
-            li_attack.innerHTML = `<b>Ataque:</b> ${attack}`;
-            li_defense.innerHTML = `<b>Defensa:</b> ${defense}`;
-            li_specialattack.innerHTML = `<b>Ataque especial:</b> ${specialattack}`;
-            li_specialdefense.innerHTML = `<b>Defensa especial:</b> ${specialdefense}`;
-            li_speed.innerHTML = `<b>Velocidad:</b> ${speed}`;
+            li_hp.innerHTML = `<b>HP:</b> ${stats[0]}`;
+            li_attack.innerHTML = `<b>Ataque:</b> ${stats[1]}`;
+            li_defense.innerHTML = `<b>Defensa:</b> ${stats[2]}`;
+            li_specialattack.innerHTML = `<b>Ataque especial:</b> ${stats[3]}`;
+            li_specialdefense.innerHTML = `<b>Defensa especial:</b> ${stats[4]}`;
+            li_speed.innerHTML = `<b>Velocidad:</b> ${stats[5]}`;
 
             lista.appendChild(li_hp);
             lista.appendChild(li_attack);
@@ -79,11 +77,33 @@ const fetchPokemon = () => {
 
             // Movimientos
             document.getElementById("pokemonMoves-Titulo").innerHTML = "Movimientos";
-            let moves2 = data.moves.map((typ) => typ.move.name);
+            let moves = data.moves.map((typ) => typ.move.name);
             document.getElementById("pokemonMoves").innerHTML = "";
-            moves2.forEach(function (el) {
-                document.getElementById("pokemonMoves").innerHTML += `<li> ${el} </li>`;
-            });
+            pokemonMovimientos(moves);
         }
+    });
+}
+
+pokemonNombre = (nombre) => {
+    document.getElementById('pokemonNombre').innerHTML = nombre;
+}
+
+pokemonID = (id) => {
+    document.getElementById('pokemonID').innerHTML = `# ${id}`;
+}
+
+pokemonImg = (url) => {
+    document.getElementById('pokeImg').src = url;
+}
+
+pokemonTipos = (tipos) => {
+    tipos.forEach(function (el) {
+        document.getElementById("pokemonTypes").innerHTML += `<li> ${el} </li>`;
+    });
+}
+
+pokemonMovimientos = (movimientos) => {
+    movimientos.forEach(function (el) {
+        document.getElementById("pokemonMoves").innerHTML += `<li> ${el} </li>`;
     });
 }
